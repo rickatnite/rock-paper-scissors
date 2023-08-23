@@ -1,19 +1,6 @@
-// use prompt() to get input from the user
-// function playRound() - two params playerSelection and computerSelection
-// playRound should return a string that declares winner "You Lose! Paper beats Rock"
-// make the user input case-insensitive so it accepts any variation of choice
-// function game() - use the playRound() function INSIDE to play a 5 round game that keeps score and reports the winner and loser
-// either call playRound() 5 times or use a loop to repeat function call 5 times
-// use console.log to display results after each round and winner at the end
-// use helper functions or rework functions if needed
-
-
-
-
-
-// const rock = 0;
-// const paper = 1;
-// const scissors = 2;
+let computerCount = 0;
+let playerCount = 0;
+let winner = "";
 
 function getComputerChoice() {
     return Math.floor(Math.random() * 3);
@@ -30,10 +17,6 @@ function getComputerSelection() {
         return "scissors";
     }
 }
-
-let computerCount = 0;
-let playerCount = 0;
-let winner = "";
 
 //change this to switch case?
 function playRound(playerSelection, computerSelection) {
@@ -77,8 +60,8 @@ function incrementScore() {
     }
 }
 
-  let playerSelection = prompt("Type rock, paper, or scissors to play!").toLowerCase();
-  let computerSelection = getComputerSelection();
+  const playerSelection = prompt("Type rock, paper, or scissors to play!").toLowerCase();
+  const computerSelection = getComputerSelection();
   console.log(playRound(playerSelection, computerSelection));
   console.log("Computer: " + computerSelection);
   console.log("Player: " + playerSelection);
@@ -87,12 +70,15 @@ function incrementScore() {
 
 
   function game() {
-    while (computerCount < 5 || playerCount < 5) {
+   // while (computerCount < 5 || playerCount < 5) {
         playRound();
         incrementScore();
-    }
+   // }
     // increment the scores somehow and add it to result of the next loop
   }
 
+game();
+console.log(computerCount);
+console.log(playerCount);
 
-  
+
