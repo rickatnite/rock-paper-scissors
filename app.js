@@ -11,39 +11,88 @@
 
 
 
-const rock = 0;
-const paper = 1;
-const scissors = 2;
-
+// const rock = 0;
+// const paper = 1;
+// const scissors = 2;
 
 function getComputerChoice() {
     return Math.floor(Math.random() * 3);
 }
 
-function game() {
-    // code here
+let compChoice = getComputerChoice();
+
+function getComputerSelection() {
+    if (compChoice === 0) {
+        return "rock";
+    } else if (compChoice === 1) {
+        return "paper";
+    } else if (compChoice === 2) {
+        return "scissors";
+    }
 }
 
+let computerCount = 0;
+let playerCount = 0;
+let winner = "";
+
+//change this to switch case?
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         console.log("It's A Tie! Go Again")
-    } else if (playerSelection === rock && computerSelection === paper) {
+    } else if (playerSelection === "rock" && computerSelection === "paper") {
+        // computerCount++;
+        winner = "Computer";
         console.log("You Lose! Paper Beats Rock")
-    } else if (playerSelection === rock && computerSelection === scissors) {
+    } else if (playerSelection === "rock" && computerSelection === "scissors") {
+        // playerCount++;
+        winner = "You";
         console.log("You Win! Rock Beats Scissors")
-    } else if (playerSelection === scissors && computerSelection === paper) {
+    } else if (playerSelection === "scissors" && computerSelection === "paper") {
+        // playerCount++;
+        winner = "You";
         console.log("You Win! Scissors Beats Paper")
-    } else if (playerSelection === scissors && computerSelection === rock) {
+    } else if (playerSelection === "scissors" && computerSelection === "rock") {
+        // computerCount++;
+        winner = "Computer";
         console.log("You Lose! Rock Beats Scissors")
-    } else if (playerSelection === paper && computerSelection === rock) {
+    } else if (playerSelection === "paper" && computerSelection === "rock") {
+        // playerCount++;
+        winner = "You";
         console.log("You Win! Paper Beats Rock")
-    } else if (playerSelection === paper && computerSelection === scissors) {
+    } else if (playerSelection === "paper" && computerSelection === "scissors") {
+        // computerCount++;
+        winner = "Computer";
         console.log("You Lose! Scissors Beats Paper")
     }
-
+    return winner;
+    // incrementScore();
+    // return what? how will it be used to increment score?
 }
-   
-  const playerSelection = "rock";
-  const computerSelection = getComputerChoice();
-  console.log(playRound(playerSelection, computerSelection));
 
+function incrementScore() {
+    if (winner === "Computer") {
+        computerCount++;
+    } else if (winner === "You") {
+        playerCount++;
+    }
+}
+
+  let playerSelection = prompt("Type rock, paper, or scissors to play!").toLowerCase();
+  let computerSelection = getComputerSelection();
+  console.log(playRound(playerSelection, computerSelection));
+  console.log("Computer: " + computerSelection);
+  console.log("Player: " + playerSelection);
+  console.log("Player Score: " + playerCount);
+  console.log("Computer Score: " + computerCount);
+
+
+  function game() {
+    while (computerCount < 5 || playerCount < 5) {
+        playRound();
+        incrementScore();
+    }
+    // increment the scores somehow and add it to result of the next loop
+  }
+
+
+  
