@@ -1,3 +1,4 @@
+
 let computerCount = 0;
 let playerCount = 0;
 let winner = "";
@@ -70,9 +71,11 @@ function incrementScore() {
 
 
   function game() {
-   // while (computerCount < 5 || playerCount < 5) {
-        playRound();
-        incrementScore();
+    
+ 
+    // while (computerCount < 5 || playerCount < 5) {
+        // playRound();
+        // incrementScore();
    // }
     // increment the scores somehow and add it to result of the next loop
   }
