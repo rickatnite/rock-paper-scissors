@@ -41,7 +41,7 @@ let computerScore = 0;
 // create and append scoring elements
 const displayResult = document.createElement("div");
 const displayScore = document.createElement("div");
-displayScore.textContent = ("Player: " + playerScore + " || " + "Computer: " + computerScore);
+displayScore.textContent = ("Player: " + playerScore + "  ||  Computer: " + computerScore);
 body.appendChild(displayScore);
 
 // declare function to get computer choice
@@ -65,32 +65,32 @@ function playRound(humanChoice, compChoice) {
         body.appendChild(displayResult);
         displayResult.textContent = "You Lose! Paper Beats Rock";
         computerScore++;
-        displayScore.textContent = "Player: " + playerScore + " || Computer: " + computerScore;
+        displayScore.textContent = "Player: " + playerScore + "  ||  Computer: " + computerScore;
     } else if (humanChoice === "rock" && compChoice === "scissors") {
         body.appendChild(displayResult);
         displayResult.textContent = "You Win! Rock Beats Scissors";
         playerScore++;
-        displayScore.textContent = "Player: " + playerScore + " || Computer: " + computerScore;
+        displayScore.textContent = "Player: " + playerScore + "  ||  Computer: " + computerScore;
     } else if (humanChoice === "scissors" && compChoice === "paper") {
         body.appendChild(displayResult);
         displayResult.textContent = "You Win! Scissors Beats Paper";
         playerScore++;
-        displayScore.textContent = "Player: " + playerScore + " || Computer: " + computerScore;
+        displayScore.textContent = "Player: " + playerScore + "  ||  Computer: " + computerScore;
     } else if (humanChoice === "scissors" && compChoice === "rock") {
         body.appendChild(displayResult);
         displayResult.textContent = "You Lose! Rock Beats Scissors";
         computerScore++;
-        displayScore.textContent = "Player: " + playerScore + " || Computer: " + computerScore;
+        displayScore.textContent = "Player: " + playerScore + "  ||  Computer: " + computerScore;
     } else if (humanChoice === "paper" && compChoice === "rock") {
         body.appendChild(displayResult);
         displayResult.textContent = "You Win! Paper Beats Rock";
         playerScore++;
-        displayScore.textContent = "Player: " + playerScore + " || Computer: " + computerScore;
+        displayScore.textContent = "Player: " + playerScore + "  ||  Computer: " + computerScore;
     } else if (humanChoice === "paper" && compChoice === "scissors") {
         body.appendChild(displayResult);
         displayResult.textContent = "You Lose! Scissors Beats Paper";
         computerScore++;
-        displayScore.textContent = "Player: " + playerScore + " || Computer: " + computerScore;
+        displayScore.textContent = "Player: " + playerScore + "  ||  Computer: " + computerScore;
     } else if (humanChoice === compChoice) {
         body.appendChild(displayResult);
         displayResult.textContent = "It's A Tie! Go Again";
@@ -120,7 +120,7 @@ function playRound(humanChoice, compChoice) {
 function resetGame() {
     playerScore = 0;
     computerScore = 0;
-    displayScore.textContent = "Player: " + playerScore + " || Computer: " + computerScore;
+    displayScore.textContent = "Player: " + playerScore + "  ||  Computer: " + computerScore;
     displayResult.textContent = "";
     resultsDiv.textContent = "";
     rockButton.disabled = false;
